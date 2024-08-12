@@ -12,6 +12,36 @@ public class Algorithm {
         return m == s;
     }
 
+    public static boolean isPalindrome(String s) {
+        int left = 0;
+        int right = s.length() - 1;
+
+        while (left < right) {
+            if (s.charAt(left) != s.charAt(right)) {
+                return false;
+            }
+
+            left++;
+            right--;
+        }
+
+        return true;
+    }
+
+    public static boolean isPalindromeCharAt(String s) {
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) != s.charAt(s.length() - 1 - i)) {
+                return false;
+            }
+
+            if (i == s.length() / 2) {
+                return true;
+            }
+        }
+
+        return true;
+    }
+
     public static boolean isPrime(int n) {
         if (n < 2) {
             return false;
@@ -66,11 +96,34 @@ public class Algorithm {
         return n * factorialRecursive(n - 1);
     }
 
+    public static int fibonacciRecursive(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("Please enter a non-negative number !");
+        }
+
+        if (n < 3) {
+            return 1;
+        }
+
+        return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+    }
+
     public static int multipleOfDigitsOfNumber(int n) {
         int s = 1;
 
         while (n > 0) {
             s *= n % 10;
+            n /= 10;
+        }
+
+        return s;
+    }
+
+    public static int reverseOfNumber(int n) {
+        int s = 0;
+
+        while (n != 0) {
+            s = s * 10 + n % 10;
             n /= 10;
         }
 
