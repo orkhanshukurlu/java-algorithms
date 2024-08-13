@@ -108,6 +108,24 @@ public class Algorithm {
         return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
     }
 
+    public static int findMaxOfNumbers(int[] n) {
+        int max = 0;
+
+        for (int i = 0; i < n.length; i++) {
+            if (i == n.length - 1) {
+                break;
+            }
+
+            if (n[i + 1] > n[i]) {
+                max = n[i + 1];
+            } else {
+                max = n[i];
+            }
+        }
+
+        return max;
+    }
+
     public static int multipleOfDigitsOfNumber(int n) {
         int s = 1;
 
