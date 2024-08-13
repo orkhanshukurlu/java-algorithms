@@ -140,4 +140,22 @@ public class Algorithm {
 
         return s;
     }
+
+    public static String greedyForATM(int n) {
+        if (n < 1) {
+            throw new IllegalArgumentException("Please enter a positive number !");
+        }
+
+        int[] moneys = {1, 5, 10, 20, 50, 100, 200};
+        StringBuilder s = new StringBuilder();
+
+        for (int i = moneys.length - 1; i >= 0; i--) {
+            while (n >= moneys[i]) {
+                s.append(moneys[i]).append(" ");
+                n -= moneys[i];
+            }
+        }
+
+        return s.substring(0, s.length() - 1);
+    }
 }

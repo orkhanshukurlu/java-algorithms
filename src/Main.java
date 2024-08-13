@@ -14,5 +14,6 @@ public class Main {
         System.out.println("multipleOfDigitsOfNumber: " + Algorithm.multipleOfDigitsOfNumber(334));
         System.out.println("reverseOfNumber: " + Algorithm.reverseOfNumber(364));
         System.out.println("sumOfDigitsOfNumber: " + Algorithm.sumOfDigitsOfNumber(134));
+        System.out.println("greedyForATM: " + Algorithm.greedyForATM(66));
     }
 }
